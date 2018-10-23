@@ -1,13 +1,7 @@
 const http = require('http');
 
-const readAll = require('./read_all');
-const readArticle = require('./read_article');
-const createArticle = require('./create_article');
-const updateArticle = require('./update_article');
-const deleteArticle = require('./delete_article');
-const createComment = require('./create_comment');
-const deleteComment = require('./delete_comment');
-const helper = require('./helper');
+const readall = require('./readall');
+
 const sum = require('./sum');
 
 
@@ -16,13 +10,8 @@ const port = 3000;
 
 const handlers = {
     '/sum': sum,
-    '/api/articles/readAll': readAll,
-    '/api/articles/read': readArticle,
-    '/api/articles/createArticle': createArticle,
-    '/api/articles/updateArticle': updateArticle,
-    '/api/articles/deleteArticle': deleteArticle,
-    '/api/comments/createComment': createComment,
-    '/api/comments/deleteComment': deleteComment
+    '/api/articles/readall': readall
+
 };
 
 const server = http.createServer((req, res) => {
@@ -35,8 +24,8 @@ const server = http.createServer((req, res) => {
                 res.setHeader('Content-Type', 'application/json');
                 res.end( JSON.stringify(err) );
             }
-            helper.updateArticles();
-            helper.logger(req.url,payload);
+            //helper.updateArticles();
+            //helper.logger(req.url,payload);
             res.statusCode = 200;
             res.end( JSON.stringify(result) );
         });

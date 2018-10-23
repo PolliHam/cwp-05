@@ -20,7 +20,8 @@
         "articleId":"1",
         "text":"bbb",
         "date":"25.02.2018",
-        "author":"ccc"}]
+        "author":"ccc"}
+    ]
   },
   {"id":2,
     "title":"title2",
@@ -33,7 +34,8 @@
         "articleId":2,
         "text":"text21",
         "date":"05.9.2018",
-        "author":"author21"}],
+        "author":"author21"}
+    ]
   },
   {"id":3,
     "title":"title3",
@@ -51,6 +53,7 @@
         "articleId":3,
         "text":"text12",
         "date":"09.10.2018",
-        "author":"author12"}]
+        "author":"author12"}
+    ]
   }
 ]
