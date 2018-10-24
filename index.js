@@ -1,11 +1,12 @@
 const http = require('http');
 
+const helper = require('./helper');
 const sum = require('./sum');
 const readall = require('./readall');
 const read= require('./read');
 const createArticle = require('./createArticle');
 const updateArticle = require('./updateArticle');
-
+const deleteArticle = require('./deleteArticle');
 const hostname = '127.0.0.1';
 const port = 3000;
 
@@ -14,7 +15,8 @@ const handlers = {
     '/api/articles/readall': readall,
     '/api/articles/read': read,
     '/api/articles/create': createArticle,
-    '/api/articles/update': updateArticle
+    '/api/articles/update': updateArticle,
+    '/api/articles/delete': deleteArticle
 };
 
 const server = http.createServer((req, res) => {
@@ -27,7 +29,7 @@ const server = http.createServer((req, res) => {
                 res.setHeader('Content-Type', 'application/json');
                 res.end( JSON.stringify(err) );
             }
-            //helper.updateArticles();
+            helper.updateArticles();
             //helper.logger(req.url,payload);
             res.statusCode = 200;
             res.end( JSON.stringify(result) );
