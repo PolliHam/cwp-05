@@ -1,7 +1,7 @@
 const http = require('http');
 
 const readall = require('./readall');
-
+const read= require('./read');
 const sum = require('./sum');
 
 
@@ -10,8 +10,8 @@ const port = 3000;
 
 const handlers = {
     '/sum': sum,
-    '/api/articles/readall': readall
-
+    '/api/articles/readall': readall,
+    '/api/articles/read': read
 };
 
 const server = http.createServer((req, res) => {
