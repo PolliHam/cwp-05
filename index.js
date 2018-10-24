@@ -7,6 +7,7 @@ const read= require('./read');
 const createArticle = require('./createArticle');
 const updateArticle = require('./updateArticle');
 const deleteArticle = require('./deleteArticle');
+const createComment = require('./createComment');
 const hostname = '127.0.0.1';
 const port = 3000;
 
@@ -16,7 +17,8 @@ const handlers = {
     '/api/articles/read': read,
     '/api/articles/create': createArticle,
     '/api/articles/update': updateArticle,
-    '/api/articles/delete': deleteArticle
+    '/api/articles/delete': deleteArticle,
+    '/api/comments/create': createComment
 };
 
 const server = http.createServer((req, res) => {
