@@ -10,9 +10,9 @@ helper.updateArticles=function(){
 };
 
 helper.logger =(url, post_body)=>{
-    let message = `${helper.dateFormater()}\tUrl: ${url}\n\t`+
-        "Post Body: "+JSON.stringify(post_body).toString()+'\n'+
-        '///////////////////////////////////////////////////\n\n';
+    let message = `${helper.dateFormater()}\tUrl: ${url}\r\n\t`+
+        "Post Body: "+JSON.stringify(post_body).toString()+'\r\n'+
+        '***************************************************************\r\n\r\n';
     fs.appendFile('log.txt', message,()=>{});
 };
 
