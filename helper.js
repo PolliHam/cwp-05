@@ -6,14 +6,14 @@ helper.random_id = function(){
 };
 
 helper.updateArticles=function(){
-    fs.writeFileSync('articles.json', JSON.stringify(articles));
+    fs.writeFile('articles.json', JSON.stringify(articles),()=>{});
 };
 
 helper.logger =(url, post_body)=>{
     let message = `${helper.dateFormater()}\tUrl: ${url}\n\t`+
         "Post Body: "+JSON.stringify(post_body).toString()+'\n'+
         '///////////////////////////////////////////////////\n\n';
-    fs.appendFileSync('log.txt', message);
+    fs.appendFile('log.txt', message,()=>{});
 };
 
 helper.dateFormater = function(){

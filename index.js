@@ -8,6 +8,7 @@ const createArticle = require('./createArticle');
 const updateArticle = require('./updateArticle');
 const deleteArticle = require('./deleteArticle');
 const createComment = require('./createComment');
+const deleteComment = require('./deleteComment');
 const hostname = '127.0.0.1';
 const port = 3000;
 
@@ -18,7 +19,8 @@ const handlers = {
     '/api/articles/create': createArticle,
     '/api/articles/update': updateArticle,
     '/api/articles/delete': deleteArticle,
-    '/api/comments/create': createComment
+    '/api/comments/create': createComment,
+    '/api/comments/delete': deleteComment
 };
 
 const server = http.createServer((req, res) => {
@@ -32,7 +34,7 @@ const server = http.createServer((req, res) => {
                 res.end( JSON.stringify(err) );
             }
             helper.updateArticles();
-            //helper.logger(req.url,payload);
+            helper.logger(req.url,payload);
             res.statusCode = 200;
             res.end( JSON.stringify(result) );
         });
