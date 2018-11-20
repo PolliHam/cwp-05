@@ -19,6 +19,6 @@ helper.logger =(url, post_body)=>{
 helper.dateFormater = function(){
     const date = new Date();
     return `Date: ${date.getFullYear()}.${date.getMonth()}.${date.getDay()}  ` +
-        `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}\n`;
+        `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}\r\n`;
 };
 module.exports = helper;

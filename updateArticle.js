@@ -9,7 +9,7 @@ module.exports = function update(req, res, payload, cb) {
     }else{
         articles[index].title = payload.title;
         articles[index].text = payload.text;
-        articles[index].date = payload.data;
+        articles[index].date = payload.date;
         articles[index].author = payload.author;
     }
     cb(null, articles[index]);
